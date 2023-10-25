@@ -1,0 +1,15 @@
+*{
+  top: 56px;
+}
+
+.modal{
+ 
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  height: 156vh;
+}
+
+
