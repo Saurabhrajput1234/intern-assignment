@@ -1,9 +1,12 @@
 import React,{useState} from "react";
-import data from "./components/Data";
 import Header from "./components/Header/Header";
 import Routers from "./components/Routers/Routers";
 import { BrowserRouter as Router } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
 import Modal from "./components/modal/Modal";
+import ContextProvider from "./components/contextProvider/ContextProvider";
+
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
@@ -14,13 +17,16 @@ import Modal from "./components/modal/Modal";
 
 
 const App = (props)=>{
-  
-    
- const [show,setShow]= React.useState(false)
 
  
-  const productItems = data;
+  
+    
+ const [show,setShow]= useState(false);
+ const [show1,setShow1]= useState(false)
+
  const [cartItem,setCartItems] = useState([])
+ 
+
  const handleAddProduct = (product) =>{
   const productExist = cartItem.find((item)=> item.id === product.id);
   if(productExist){
@@ -50,28 +56,34 @@ const handleRemoveProduct =(product)=>{
 const handleCartClear = ()=>{
   setCartItems([]);
 }
+console.log("thiese are",cartItem)
+console.log("show1 app",show1)
+console.log("show app",show)
+
   
   return (<>
   <div>
     <div id="signInDiv"></div>
-
+    <ContextProvider>
+    
     <Router>
       
-    
-      
-    <Header cartItem={cartItem} onShow = {()=> setShow(true)} />
-    <Routers  show = {show} productItems={productItems}  cartItem={cartItem} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClear={handleCartClear}/>
-    <Modal show = {show} onClose = {()=> setShow(false)}   cartItem = {cartItem} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClear={handleCartClear}>
-      
+    <Header cartItem ={cartItem} onShow = {()=> setShow(true)}  show = {show} onClose={()=> setShow(false)} onShow1 = {()=> setShow1(true)}  show1 = {show1} onClose1={()=> setShow1(false)} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClear={handleCartClear} />
+    <Routers  show = {show}   cartItem={cartItem} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClear={handleCartClear}/>
+    <Modal show1 = {show1} onClose1 = {()=> setShow1(false)}   cartItem = {cartItem} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClear={handleCartClear}> 
     </Modal>
-    
+
+    {/* <ModalProduct show = {show} onClose = {()=> setShow(false)} onShow = {()=> setShow(true)} > 
+    </ModalProduct> */}
+
+
+    <Footer/>
     
 
     {/* <SearchData/> */}
     
     </Router>
-    
-    
+    </ContextProvider>
  
   </div>
 

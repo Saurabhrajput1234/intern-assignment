@@ -1,39 +1,57 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom';
 import "./Header.css";
-import addToCart from "../image/addToCart.png";
+import { useState } from 'react';
+import SearchProduct from './SearchProduct';
+import { MdAddShoppingCart } from "react-icons/md";
+import Modal from '../modal/ModalProduct';
+// import SearchData from '../../back/Data/SearchData';
 
-const Header = (props) => {
-  return (
-    <div className="header">
-      <div>
-        <h1>
-          <Link to="/" className="logo">
-            mandeshi
-          </Link>
-        </h1>
-      </div>
-      <div className="header-links">
-        <ul>
-          <li>
-            <Link to="/">Product</Link>
-          </li>
-        </ul>
+const Header = (props) => 
+{
 
-        <ul>
-          <li>
-            <div className="cart" onClick={props.onShow}>
-              {" "}
-              <img className="add-to-cart" src={addToCart} alt="" />
-              <span className="cart-length">
-                {props.cartItem.length === 0 ? "" : props.cartItem.length}
-              </span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
-};
+  console.log("thiese are saurabh",props.cartItem);
+    const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  
+    const toggleNavbar = () => {
+      setIsNavbarOpen(!isNavbarOpen);
+    };
+  
+    return (
+      <nav className="navbar">
+        <div className="navbar-container">
+          <div ><Link to="/" className="navbar-logo">
+                E-Sa
+            </Link></div>
+          <div className={`navbar-links ${isNavbarOpen ? 'active' : ''}`}>
+   
+          <SearchProduct onShow={props.onShow}  show = {props.show} onClose={props.onClose}/>
+            <a href="/">Home</a>
+            <a href="/Products">Product</a>
+            <a href="/signup">Signup</a>
+{/* <a  onClick={props.onShow1} >
+<Modal cartItem={props.cartItem}   show1 = {props.show1} onClose1={props.onClose1}  handleAddProduct={props.handleAddProduct} handleRemoveProduct={props.handleRemoveProduct} handleCartClear={props.handleCartClear}> add</Modal>
+                <span className='cart-length'>{props.cartItem.length === 0 ? "": props.cartItem.length}</span>
+ </a> */}
+ 
+                
+ <div   style={{color:"white"}}  className='/cart' onClick={props.onShow1} ><MdAddShoppingCart/>
+                <span className='cart-length'>{props.cartItem.length === 0 ? "": props.cartItem.length}</span>
+                
+                </div>
+                
+            
+          </div>
+          
 
-export default Header;
+          <div className="navbar-toggle" onClick={toggleNavbar}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    );
+  };
+
+export default Header
