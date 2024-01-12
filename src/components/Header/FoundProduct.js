@@ -8,16 +8,15 @@ const FoundProduct = (props) => {
    
    
   return (
-    <div className='SearchProduct' style={{height:"333px",width:"333px",background:"yellow"}}>
+    <div className='SearchProduct' style={{height:"428px",width:"348px",background:"#91c16e",border:"2px solid black"}}>
       <div className="cart-Item-header">
-             your Cart
-             <button className='cart-remove' onClick={props.onClose}>hvjhv×</button>
+             <button className='cart-remove' onClick={props.onClose}>×</button>
       </div> 
 
-      <h3>Found Product</h3>
-      <img src={product.images[3]} alt="" />
+      <h3>{product.title}</h3>
+      <img src={product.images[3]} style={{height:"234px",width:"345px"}}  alt="" />
       
-      <p>Name: {product.title}</p>
+       <h5>Price : {product.price}</h5>
     </div>
   );
 };

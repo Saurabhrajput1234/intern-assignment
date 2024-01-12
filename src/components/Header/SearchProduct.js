@@ -18,17 +18,13 @@ const SearchProduct = (props) => {
    
   }
 
-
-
- 
-
-    console.log("this is your search product",foundProduct);
   
   return (
     <div>
-    <form className="searchBox" role="search" style={{display:"flex"}} onSubmit={handleSearch} >
-        <input className="searchInput" name='SearchName' type="search" placeholder="Search" onChange={(e)=> setSearchProduct(e.target.value)} aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit"   >Search</button>
+    <form className="searchBox" role="search" style={{display:"flex","padding-right":"264px"}} onSubmit={handleSearch} >
+    <div style={{width:"45px",display:"flex"}} >
+        <input className="searchInput" style={{width:"300px"}}  name='SearchName' type="search" placeholder="Search" onChange={(e)=> setSearchProduct(e.target.value)} aria-label="Search"/>
+        <button className="button1" type="submit"  style={{width:"67px",height: "45px" }}  >Search</button></div>
       </form>
       {foundProduct ? (
         props.onShow(),

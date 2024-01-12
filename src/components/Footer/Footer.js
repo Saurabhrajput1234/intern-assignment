@@ -11,10 +11,12 @@ function Footer() {
             
           </div>
               <div className="icon">
-              <img src="pics/Vector.svg" alt="" />
-              <img src="pics/Vector1.svg" alt="" />
-              <img src="pics/Vector2.svg" alt="" />
-              <img src="pics/Vector3.svg" alt="" />
+              
+              <a href="https://github.com/Saurabhrajput1234"><img src="pics/Vector.svg"  alt="" /></a>
+              <a href="https://www.linkedin.com/in/saurabh-rajput-135587232/"><img src="pics/Vector2.svg" alt="" ></img></a>
+              {/* <img src="pics/Vector1.svg" alt="" ></img>
+              <img src="pics/Vector3.svg" alt="" ></img> */}
+               
 
               </div> </div>
           <div className="Map">
@@ -26,7 +28,7 @@ function Footer() {
        </div>
        <div className="footer-bottom">
 
-       <p>&copy; 2023 e-sa.com</p>
+       <p>&copy; 2023.com</p>
 
 </div>
     </div>

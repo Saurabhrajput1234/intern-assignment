@@ -4,8 +4,7 @@ import "./Header.css";
 import { useState } from 'react';
 import SearchProduct from './SearchProduct';
 import { MdAddShoppingCart } from "react-icons/md";
-import Modal from '../modal/ModalProduct';
-// import SearchData from '../../back/Data/SearchData';
+
 
 const Header = (props) => 
 {
@@ -21,7 +20,7 @@ const Header = (props) =>
       <nav className="navbar">
         <div className="navbar-container">
           <div ><Link to="/" className="navbar-logo">
-                E-Sa
+                Assignment
             </Link></div>
           <div className={`navbar-links ${isNavbarOpen ? 'active' : ''}`}>
    

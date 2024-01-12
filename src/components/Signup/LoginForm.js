@@ -36,7 +36,8 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="LoginForm">
+    <div className="signin">
+    <div className="signin-form">
       <h2>Login</h2>
       <form>
         <label>
@@ -61,6 +62,7 @@ const LoginForm = () => {
           Login
         </button>
       </form>
+    </div>
     </div>
   );
 };
