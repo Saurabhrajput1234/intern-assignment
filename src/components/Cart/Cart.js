@@ -37,12 +37,12 @@ const Cart = (props) => {
             <div>
               <img
                 className="cart-item-image"
-                src={item.image}
-                alt={item.name}
+                src={item.images[3]}
+                alt={item.title}
               />
             </div>
             <div className="product-details">
-              <div className="cart-item-name">{item.name}</div>
+              <div className="cart-item-name">{item.title}</div>
 
               <div className="cart-item-function">
                 <button
@@ -64,10 +64,7 @@ const Cart = (props) => {
             </div>
           </div>
         ))}
-        <div className="apply-coupon">
-          <input type="text" placeholder="Enter coupon code" />
-          <button type="submit">Apply coupon</button>
-        </div>
+      
         <div className="suggest-product"></div>
 
         <div className="your-total-price">
@@ -78,7 +75,7 @@ const Cart = (props) => {
           <h4>CHECKOUT</h4>
         </div>
         <div className="continue-shop">
-          <a href="/product">CONTINUE SHOPPING</a>
+          <a href="/products">CONTINUE SHOPPING</a>
         </div>
       </div>
     </div>

@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
+import { Context } from "../contextProvider/ContextProvider";
 
 const LoginForm = () => {
+
+  const {setResponse} = useContext(Context);
+
   const history = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  
 
   const handleLogin = async () => {
+
 
     const response = await fetch("https://dummyjson.com/auth/login", {
       method: "POST",
@@ -23,14 +29,18 @@ const LoginForm = () => {
     const result = await response.json();
 
     if (response.ok) {
+      alert("login Successful")
       localStorage.setItem("usersdatatoken",
         result.token);
+        setResponse(result)
       history("/Products");
     }
   };
 
   return (
     <div className="signin">
+<pre><h3>login with:  username: 'kminchelle',
+          password: '0lelplR' </h3></pre>
       <div className="signin-form">
         <h2>Login</h2>
         <form>
