@@ -15,16 +15,16 @@
     margin: 86px;
 }
 
-/* Media query for screens with a width of 360 pixels or less (e.g., mobile devices) */
+
 @media (max-width: 360px) {
     .Home-page img {
-        width: 100%; /* Adjust the width for better responsiveness */
-        opacity: 100%; /* Adjust the opacity for better visibility */
+        width: 100%; 
+        opacity: 100%; 
     }
 
     .Home-page h1 {
-        font-size: 2rem; /* Adjust the font size for better readability on smaller screens */
+        font-size: 2rem; 
         padding-left: 10px;
-        margin: 86px; /* Adjust the padding for better spacing on smaller screens */
+        margin: 86px;
     }
 }
