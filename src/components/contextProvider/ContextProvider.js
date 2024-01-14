@@ -4,14 +4,22 @@ export const Context = createContext({
   productList: [],
   fetching: false,
   setResponse:{},
-  response :[]
+  response :[],
+  show:false,
+  SetShow:{},
 });
 
 const ContextProvider = ({ children }) => {
   const [productList, setProductList] = useState([]);
   const [fetching, setFetching] = useState(false);
   const [response,setResponse] = useState("")
-  console.log("this responce",response)
+  const [show, SetShow] = useState(false);
+
+//  Memoize the setShow function to prevent unnecessary re-renders
+//  const SetShow = useMemo(() => setShow, []);
+
+
+  
   useEffect(() => {
     setFetching(true);
     fetch("https://dummyjson.com/products")
@@ -24,7 +32,7 @@ const ContextProvider = ({ children }) => {
 
   return (
     <>
-      <Context.Provider value={{ productList, fetching,setResponse,response}}>
+      <Context.Provider value={{ productList, fetching,setResponse,response,SetShow,show}}>
         {children}
       </Context.Provider>
     </>

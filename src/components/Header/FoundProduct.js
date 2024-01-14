@@ -2,15 +2,19 @@ import React from 'react'
 
 const FoundProduct = (props) => {
 
-  const product = props.product;
+ 
 
+
+  const product = props.product;
+  
+   
 
 
 
   return (
     <div className='SearchProduct' style={{ height: "428px", width: "348px", background: "#91c16e", border: "2px solid black" }}>
       <div className="cart-Item-header">
-        <button className='cart-remove' onClick={props.onClose}>×</button>
+        <button className='sg'id='dd' onClick={()=>props.setShow(false)}>×</button>
       </div>
 
       <h3>{product.title}</h3>

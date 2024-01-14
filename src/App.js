@@ -6,10 +6,11 @@ import Footer from "./components/Footer/Footer";
 import Modal from "./components/modal/Modal";
 import ContextProvider from "./components/contextProvider/ContextProvider";
 
-const App = (props) => {
-  const [show, setShow] = useState(false);
-  const [show1, setShow1] = useState(false);
+
+const App = () => {
+  
   const [cartItem, setCartItems] = useState([]);
+  const [show1, setShow1] = useState(false);
 
   const handleAddProduct = (product) => {
     const productExist = cartItem.find((item) => item.id === product.id);
@@ -51,9 +52,9 @@ const App = (props) => {
           <Router>
             <Header
               cartItem={cartItem}
-              onShow={() => setShow(true)}
-              show={show}
-              onClose={() => setShow(false)}
+              
+             
+              
               onShow1={() => setShow1(true)}
               show1={show1}
               onClose1={() => setShow1(false)}
@@ -62,7 +63,7 @@ const App = (props) => {
               handleCartClear={handleCartClear}
             />
             <Routers
-              show={show}
+             
               cartItem={cartItem}
               handleAddProduct={handleAddProduct}
               handleRemoveProduct={handleRemoveProduct}
