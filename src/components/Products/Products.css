@@ -24,7 +24,7 @@
 .card-image{
     width: 100%;
     max-width: 300px;
-    max-height: 200px;
+    height: 200px;
     display: block;
     object-fit: cover;
 
@@ -32,6 +32,7 @@
 .product-name{
     text-transform: uppercase;
     margin: 10px 0px;
+    height: 63px;
 }
 .product-price{
     margin: 10px 0px;
